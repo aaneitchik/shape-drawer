@@ -1,0 +1,158 @@
+@font-face {
+    font-family: Pacifico;
+    src: url('./assets/fonts/Pacifico.ttf');
+}
+
+@font-face {
+    font-family: EncodeSansWide-Medium;
+    src: url('./assets/fonts/EncodeSansWide-Medium.ttf');
+}
+
+@font-face {
+    font-family: EncodeSansWide-Light;
+    src: url('./assets/fonts/EncodeSansWide-Light.ttf');
+}
+
+body {
+    background-color: #f8f8f8;
+    color: white;
+    font-family: EncodeSansWide-Light;
+}
+
+#mainTitle {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    color: rgba(255, 207, 30, 1);
+    font-family: Pacifico;
+    font-size: 54px;
+}
+
+#mainHelper {
+    margin-bottom: 60px;
+    color: rgba(96, 26, 100, 0.7);
+    font-size: 18px;
+}
+
+#drawContainer {
+    margin-top: 5px;
+    background-color: rgba(141, 198, 63, 0.4);
+    padding: 40px;
+    min-height: 500px;
+}
+
+#drawPanel {
+    background-color: white;
+    min-height: 500px;
+}
+
+#shapeMenu {
+    height: 60px;
+    margin-bottom: 5px;
+    background-color: rgba(122, 33, 127, 0.8);
+}
+
+#shapeMenu ul {
+    list-style-type: none;
+    margin-bottom: 0;
+}
+
+#shapeMenu li {
+    display: inline-block;
+    height: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+#shapeMenu li:hover, .active {
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+#shapeMenu ul li a {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: white;
+    font-family: EncodeSansWide-Light;
+    font-size: 18px;
+    line-height: 60px;
+    vertical-align: middle;
+}
+
+#subMenu {
+    padding: 8px;
+    color: rgba(122, 33, 127, 1);
+    border: 1px solid rgba(122, 33, 127, 0.4);
+    text-align: center;
+}
+
+#subMenu span {
+    font-size: 16px;
+    vertical-align: middle;
+    line-height: 50px;
+}
+
+#subMenu i {
+    margin-right: 12px;
+    color: rgba(255, 207, 30, 1);
+    font-size: 44px;
+    vertical-align: middle;
+    line-height: 50px;
+}
+
+#colorPicker {
+    margin-top: 20px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+#colorPicker button:last-child {
+    margin-right: 0;
+}
+
+.color-box {
+    margin-left: 6px;
+}
+
+#numberContainer {
+    border: none;
+}
+
+#sidesNumber {
+    padding: 5px;
+    margin-left: 5px;
+    width: 50px;
+    color: rgba(122, 33, 127, 1);
+    border: 1px solid rgba(122, 33, 127, 0.4);
+    outline: none;
+}
+
+/*POPOVERS*/
+.popover {
+    max-width: 400px; /* optional max width */
+    width: intrinsic; /* Safari/WebKit uses a non-standard name */
+    width: -moz-max-content; /* Firefox/Gecko */
+    width: -webkit-max-content; /* Chrome */
+}
+
+/*BUTTONS*/
+.btn {
+    margin-right: 8px;
+    padding: 10px;
+    border: 1px solid rgba(122, 33, 127, 0.2);
+    border-radius: 0;
+    font-family: EncodeSansWide-Medium;
+    color: rgba(122, 33, 127, 0.8);
+    background-color: transparent;
+}
+
+.btn:hover, .btn:focus, .btn:active {
+    color: rgba(122, 33, 127, 1);
+    outline: 0;
+    border-color: rgba(122, 33, 127, 0.4);
+    background-color: transparent;
+}
+
+.btn i {
+    color: rgb(224, 181, 27);
+    margin-right: 6px;
+}

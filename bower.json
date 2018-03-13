@@ -1,0 +1,36 @@
+{
+  "name": "shapeDrawer",
+  "authors": [
+    "AAneitchik <aaneitchik@gmail.com>"
+  ],
+  "description": "A Web Application to draw shapes.",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "konva": "^0.11.1",
+    "bootstrap": "^3.3.6",
+    "angular": "^1.5.0",
+    "angular-color-picker": "^1.0.10",
+    "angular-bootstrap": "^1.1.2",
+    "components-font-awesome": "^4.5.0"
+  },
+  "overrides": {
+    "bootstrap": {
+      "main": [
+        "less/bootstrap.less",
+        "dist/css/bootstrap.css",
+        "dist/js/bootstrap.js"
+      ]
+    }
+  }
+}

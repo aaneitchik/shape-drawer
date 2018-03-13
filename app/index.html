@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>shapeDrawer</title>
+
+	<!-- bower:css -->
+	<!-- bower installed css files will go here... -->
+	<!-- endinject -->
+	<!-- inject:css -->
+	<!-- built css files will go here... -->
+	<!-- endinject -->
+	<!-- bower:js -->
+	<!-- endinject -->
+	<!-- inject:js -->
+	<!-- endinject -->
+</head>
+<body ng-app="shapeDrawer" ng-controller="DrawController as draw">
+
+<div class="row">
+	<div class="col-sm-10 col-sm-offset-1">
+		<div class="row">
+			<div class="col-xs-12">
+				<p id="mainTitle" class="text-center">Welcome to Shape Drawer!</p>
+				<p id="mainHelper" class="text-center">Please, select shape to draw from the panel below</p>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-12">
+				<div id="shapeMenu">
+					<ul class="text-center">
+						<li ng-repeat="item in draw.shapeMenu" ng-class="{active: item.active}"
+						    ng-click="draw.selectShape(item)">
+							<a href="">{{::item.name}}</a>
+						</li>
+					</ul>
+				</div>
+
+				<div id="subMenu" ng-if="draw.selectedShape.active">
+					<div ng-include="draw.selectedShape.toolbarTemplate"></div>
+				</div>
+
+				<div id="colorPicker">
+					<button uib-popover-template="draw.fillPopover" type="button" popover-trigger="outsideClick"
+					        class="btn btn-default">
+						<i class="fa fa-paint-brush"></i>
+						Fill Color
+						<i class="fa fa-square color-box" ng-style="{color: draw.fillColor}"></i>
+					</button>
+					<button uib-popover-template="draw.outlinePopover" type="button" popover-trigger="outsideClick"
+					        class="btn btn-default">
+						<i class="fa fa-pencil"></i>
+						Outline Color
+						<i class="fa fa-square color-box" ng-style="{color: draw.outlineColor}"></i>
+					</button>
+					<span id="numberContainer" class="btn btn-default" ng-if="draw.selectedShape.name === 'Regular Polygon'">
+						Sides number:
+						<input id="sidesNumber" ng-model="draw.vertexNumber" type="number">
+					</span>
+					<button ng-click="draw.clearStage()" class="btn btn-default pull-right">
+						<i class="fa fa-eraser"></i>
+						Clear Panel
+					</button>
+				</div>
+
+				<div id="drawContainer">
+					<div id="drawPanel"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>
