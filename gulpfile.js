@@ -21,7 +21,8 @@ var paths = {
 	scripts: 'app/**/*.js',
 	html: 'app/**/*.html',
 	ttf: 'app/**/*.ttf',
-	svg: 'app/**/*.svg'
+	svg: 'app/**/*.svg',
+	bower_components: 'bower_components/**/*'
 };
 
 //Delete the dist directory
@@ -34,8 +35,9 @@ gulp.task('clean', function () {
 gulp.task('inject', ['copy', 'scripts'], function () {
 	var target = gulp.src(bases.dist + 'index.html');
 	var sources = gulp.src(['./dist/' + '**/*.js', bases.dist + '**/*.css']);
+
 	return target
-		.pipe(inject(gulp.src(bowerFiles(), {read: false}), {name: 'bower', relative: true}))
+		.pipe(inject(gulp.src(bowerFiles()), { addRootSlash: false, name: 'bower', relative: false}))
 		.pipe(inject(sources, {ignorePath: 'dist/', relative: true}))
 		.pipe(gulp.dest('./dist'))
 });
@@ -72,6 +74,12 @@ gulp.task('serve', ['inject'], function () {
 
 //Copy all other files to dist directly
 gulp.task('copy', ['clean'], function () {
+
+	gulp.src('bower.json')
+		.pipe(gulp.dest(bases.dist));
+
+	gulp.src(paths.bower_components)
+		.pipe(gulp.dest(bases.dist + 'bower_components'));
 
 	//Copy html
 	gulp.src(paths.html)
