@@ -25,6 +25,8 @@ Click [here] to see the demo.
     ```
     and it will open on `localhost:3000`
     
+    Built version will be created automatically in `dist` folder.
+    
 [//]: #
 [bower]: <https://bower.io/>
 [yarn]: <https://yarnpkg.com>
