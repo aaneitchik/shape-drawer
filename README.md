@@ -1,5 +1,9 @@
 # Shape Drawer
+
 A university task to create a shape drawer app.
+
+![Shape drawer](https://user-images.githubusercontent.com/11046028/37485374-469b6e9c-289c-11e8-9300-8e0462161f4f.png)
+Click [here] to see the demo.
 
 ## How to run locally
 
